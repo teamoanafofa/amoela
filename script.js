@@ -1,4 +1,15 @@
 // =====================
+// BOTÃO TOCAR MÚSICA
+// =====================
+const music = document.getElementById("music");
+const playBtn = document.getElementById("playMusic");
+
+playBtn.addEventListener("click", () => {
+  music.play();
+  playBtn.style.display = "none";
+});
+
+// =====================
 // BOTÃO "NÃO" FUGINDO
 // =====================
 const noButton = document.getElementById("no");
@@ -54,7 +65,7 @@ const heartsContainer = document.querySelector(".hearts");
 
 function createHeart() {
   const heart = document.createElement("div");
-  heart.classList.add("heart-fall");
+  heart.className = "heart-fall";
   heart.innerHTML = "❤️";
 
   heart.style.left = Math.random() * 100 + "vw";
@@ -63,9 +74,7 @@ function createHeart() {
 
   heartsContainer.appendChild(heart);
 
-  setTimeout(() => {
-    heart.remove();
-  }, 7000);
+  setTimeout(() => heart.remove(), 7000);
 }
 
 setInterval(createHeart, 300);
