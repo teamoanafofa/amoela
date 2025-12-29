@@ -36,11 +36,8 @@ function showLove() {
   document.getElementById("page-love").classList.remove("hidden");
 }
 
-// =====================
-// CRONÔMETRO
-// 🔴 EDITE A DATA AQUI
-// =====================
-const startDate = new Date(2024, 0, 1, 0, 0, 0);
+
+const startDate = new Date(2025, 10, 19, 0, 0, 0);
 
 function updateTimer() {
   const now = new Date();
@@ -78,3 +75,4 @@ function createHeart() {
 }
 
 setInterval(createHeart, 300);
+
