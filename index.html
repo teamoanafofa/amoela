@@ -2,48 +2,27 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>💖 Uma pergunta especial</title>
+  <title>💖 Pedido Especial</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- MÚSICA -->
-<audio id="music" loop>
-  <source src="boca.mp3" type="audio/mpeg">
-</audio>
+<audio id="music" src="boca.mp3" loop></audio>
 
-<!-- BOTÃO TOCAR MÚSICA -->
-<button id="playMusic" class="music-btn">▶️ Tocar música</button>
+<button class="music-btn" onclick="playMusic()">▶️ Tocar música</button>
 
-<!-- CORAÇÕES CAINDO -->
-<div class="hearts"></div>
-
-<!-- TELA DO PEDIDO -->
-<div class="container" id="page-love">
-  <div class="heart-center">❤️</div>
-
-  <h1>Eu amo você 💕</h1>
+<div class="container">
+  <div class="heart">❤️</div>
+  <h1>Eu amo você</h1>
   <p>Quer namorar comigo?</p>
 
   <div class="buttons">
-    <button id="yes">Sim 💖</button>
-    <button id="no">Não 😭</button>
+    <button class="yes" onclick="openLetter()">Sim 💖</button>
+    <button class="no">Não ❌</button>
   </div>
-
-  <br>
-  <button class="link" onclick="showTimer()">⏳ Ver nosso tempo juntos</button>
 </div>
 
-<!-- TELA DO CRONÔMETRO -->
-<div class="container hidden" id="page-timer">
-  <h1>⏳ Nosso tempo juntos</h1>
-  <p>Já nos conhecemos há:</p>
-
-  <div class="timer" id="timer"></div>
-
-  <br>
-  <button class="link" onclick="showLove()">⬅ Voltar</button>
-</div>
+<div class="hearts"></div>
 
 <script src="script.js"></script>
 </body>
