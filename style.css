@@ -12,7 +12,6 @@ body {
   z-index: 2;
 }
 
-/* CORAÇÃO */
 .heart {
   font-size: 80px;
   animation: pulse 1s infinite;
@@ -24,7 +23,6 @@ body {
   100% { transform: scale(1); }
 }
 
-/* BOTÃO DE MÚSICA */
 .music-btn {
   margin-bottom: 15px;
   padding: 14px 18px;
@@ -36,7 +34,6 @@ body {
   cursor: pointer;
 }
 
-/* DISCO GIRANDO */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -46,7 +43,6 @@ body {
   animation: spin 2s linear infinite;
 }
 
-/* TEXTO */
 h1 {
   color: #c4004d;
 }
@@ -55,21 +51,19 @@ p {
   font-size: 20px;
 }
 
-/* CRONÔMETRO */
 .timer {
   margin: 15px 0;
   font-size: 18px;
   color: #8b0033;
-  cursor: pointer;
 }
 
-/* BOTÕES */
 .buttons button {
   padding: 15px 30px;
   margin: 10px;
   font-size: 18px;
   border: none;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 .yes {
@@ -81,10 +75,21 @@ p {
   background: gray;
   color: white;
   position: absolute;
-  left: -999px;
 }
 
-/* CORAÇÕES */
+.letter {
+  position: fixed;
+  inset: 0;
+  background: #fff0f5;
+  padding: 40px;
+  overflow-y: auto;
+  z-index: 3;
+}
+
+.hidden {
+  display: none;
+}
+
 .hearts span {
   position: fixed;
   top: -10%;
