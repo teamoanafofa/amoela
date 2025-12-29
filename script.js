@@ -6,10 +6,9 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const closeBtn = document.getElementById("closeBtn");
 
-const startDate = new Date(2025, 10, 19);
+const startDate = new Date(2025, 10, 19, 0, 0, 0);
 
 musicBtn.addEventListener("click", () => {
-  music.currentTime = 0;
   music.play();
   musicBtn.classList.remove("spinning");
   void musicBtn.offsetWidth;
