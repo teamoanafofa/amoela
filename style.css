@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  background: pink;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  margin-top: 12vh;
+}
+
+.heart {
+  font-size: 90px;
+}
+
+#musicBtn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  background: #ff2d75;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  animation: none;
+}
+
+.spin {
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+h1 {
+  color: #b8004c;
+}
+
+#timer {
+  margin: 15px;
+  font-size: 18px;
+}
+
+.buttons {
+  position: relative;
+  height: 120px;
+}
+
+.buttons button {
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff2d75;
+  color: white;
+}
+
+#no {
+  background: gray;
+  color: white;
+  position: absolute;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#overlay.show {
+  display: flex;
+}
+
+.card {
+  background: #fff0f5;
+  padding: 30px;
+  max-width: 520px;
+  border-radius: 20px;
+}
+
+.card p {
+  font-size: 16px;
+}
+
+#close {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  background: #ff2d75;
+  color: white;
+  cursor: pointer;
+}
