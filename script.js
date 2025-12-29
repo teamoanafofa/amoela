@@ -1,78 +1,70 @@
-// =====================
-// BOTÃO TOCAR MÚSICA
-// =====================
 const music = document.getElementById("music");
-const playBtn = document.getElementById("playMusic");
 
-playBtn.addEventListener("click", () => {
+/* TOCAR MÚSICA */
+function playMusic() {
   music.play();
-  playBtn.style.display = "none";
-});
-
-// =====================
-// BOTÃO "NÃO" FUGINDO
-// =====================
-const noButton = document.getElementById("no");
-
-noButton.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-  const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
-
-  noButton.style.position = "absolute";
-  noButton.style.left = `${x}px`;
-  noButton.style.top = `${y}px`;
-});
-
-// =====================
-// TROCA DE TELAS
-// =====================
-function showTimer() {
-  document.getElementById("page-love").classList.add("hidden");
-  document.getElementById("page-timer").classList.remove("hidden");
+  localStorage.setItem("musicPlaying", "true");
+  document.querySelector(".music-btn").style.display = "none";
 }
 
-function showLove() {
-  document.getElementById("page-timer").classList.add("hidden");
-  document.getElementById("page-love").classList.remove("hidden");
+/* MANTER MÚSICA */
+if (localStorage.getItem("musicPlaying") === "true") {
+  music.play().catch(() => {});
 }
 
+/* ABRIR CARTA EM NOVA ABA */
+function openLetter() {
+  localStorage.setItem("musicPlaying", "true");
 
-const startDate = new Date(2025, 10, 19, 0, 0, 0);
+  const win = window.open("", "_blank");
 
-function updateTimer() {
-  const now = new Date();
-  const diff = now - startDate;
+  win.document.write(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <title>💌 Uma Carta</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+      <audio src="boca.mp3" autoplay loop></audio>
 
-  document.getElementById("timer").innerHTML =
-    `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos 💖`;
+      <div class="letter">
+        <h1>💖 Uma carta pra você</h1>
+        <p>
+          aaaaaa
+        </p>
+        <p>
+          Esse é só o começo da nossa história 💕
+        </p>
+        <h2>📅 19/11/2025</h2>
+      </div>
+
+      <div class="hearts"></div>
+
+      <script>
+        setInterval(() => {
+          const heart = document.createElement("span");
+          heart.innerHTML = "❤️";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.fontSize = Math.random() * 20 + 20 + "px";
+          document.querySelector(".hearts").appendChild(heart);
+          setTimeout(() => heart.remove(), 5000);
+        }, 300);
+      </script>
+
+    </body>
+    </html>
+  `);
 }
 
-setInterval(updateTimer, 1000);
-updateTimer();
-
-// =====================
-// 💕 CORAÇÕES CAINDO
-// =====================
-const heartsContainer = document.querySelector(".hearts");
-
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart-fall";
+/* CORAÇÕES NA PÁGINA PRINCIPAL */
+setInterval(() => {
+  const heart = document.createElement("span");
   heart.innerHTML = "❤️";
-
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = Math.random() * 20 + 15 + "px";
-  heart.style.animationDuration = Math.random() * 3 + 4 + "s";
-
-  heartsContainer.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 7000);
-}
-
-setInterval(createHeart, 300);
-
+  heart.style.fontSize = Math.random() * 20 + 20 + "px";
+  document.querySelector(".hearts").appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 300);
