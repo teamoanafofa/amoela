@@ -9,7 +9,7 @@ body {
   text-align: center;
   margin-top: 12vh;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .heart {
@@ -24,27 +24,27 @@ body {
 }
 
 .music-btn {
-  margin-bottom: 15px;
-  padding: 14px 18px;
-  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  font-size: 32px;
   border-radius: 50%;
   border: none;
-  background: #ff4d88;
+  background: #ff2d75;
   color: white;
   cursor: pointer;
 }
 
-@keyframes spin {
+@keyframes spinFast {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 .music-btn.spinning {
-  animation: spin 2s linear infinite;
+  animation: spinFast 0.6s linear infinite;
 }
 
 h1 {
-  color: #c4004d;
+  color: #b8004c;
 }
 
 p {
@@ -54,7 +54,6 @@ p {
 .timer {
   margin: 15px 0;
   font-size: 18px;
-  color: #8b0033;
 }
 
 .buttons button {
@@ -67,7 +66,7 @@ p {
 }
 
 .yes {
-  background: #ff4d88;
+  background: #ff2d75;
   color: white;
 }
 
@@ -77,23 +76,42 @@ p {
   position: absolute;
 }
 
-.letter {
+/* POPUP */
+.overlay {
   position: fixed;
   inset: 0;
-  background: #fff0f5;
-  padding: 40px;
-  overflow-y: auto;
-  z-index: 3;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
-.hidden {
-  display: none;
+.overlay.show {
+  display: flex;
+}
+
+.popup {
+  background: #fff0f5;
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.close {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  background: #ff2d75;
+  color: white;
+  cursor: pointer;
 }
 
 .hearts span {
   position: fixed;
   top: -10%;
-  color: red;
   animation: fall 5s linear forwards;
 }
 
