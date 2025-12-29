@@ -1,53 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>💗</title>
+<title>💖</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<audio id="musica" loop>
-  <source src="boca.mp3" type="audio/mpeg">
-</audio>
+<audio id="music" src="boca.mp3" loop></audio>
 
 <div class="container">
 
-  <button id="playBtn" class="disco">💿</button>
+<button id="musicBtn" class="music-btn">💿</button>
 
-  <div class="carta">
-    <p>
-desde que a gente comecou a namorar, eu senti que nunca tinha feito um pedido digno<br><br>
-sentia que era algo que foi feito de forma desleixada<br><br>
-queria mudar isso, essa era a surpresa que eu queria te fazer no minecraft<br><br>
-mas voce nao queria jogar, nao gostava da ideia<br><br>
-mas eu amo voce, mesmo q eu tenha um jeito meio complicado, eu realmente te amo<br><br>
-e espero que voce me ame tambem<br><br>
-eu nao fiz isso completamente sozinho, usei a internet pra pegar muitas coisas, quase tudo, mas acho q oq importa eh a intencao, e to fazendo isso pq realmente te amo
-    </p>
-  </div>
+<div class="heart">❤️</div>
 
-  <div id="cronometro"></div>
+<h1>Eu amo você</h1>
+<p>Quer namorar comigo?</p>
 
-  <div class="botoes">
-    <button id="sim">💖 Sim</button>
-    <button id="nao">💔 Não</button>
-  </div>
+<div id="timer"></div>
+
+<div class="buttons">
+  <button id="yes">Sim 💖</button>
+  <button id="no">Não ❌</button>
+</div>
 
 </div>
 
-<div id="popup">
-  <div class="popup-carta">
-    <span id="fechar">✖</span>
-    <p>
-desde que a gente comecou a namorar, eu senti que nunca tinha feito um pedido digno<br><br>
-sentia que era algo que foi feito de forma desleixada<br><br>
-queria mudar isso, essa era a surpresa que eu queria te fazer no minecraft<br><br>
-mas voce nao queria jogar, nao gostava da ideia<br><br>
-mas eu amo voce, mesmo q eu tenha um jeito meio complicado, eu realmente te amo<br><br>
-e espero que voce me ame tambem<br><br>
-eu nao fiz isso completamente sozinho, usei a internet pra pegar muitas coisas, quase tudo, mas acho q oq importa eh a intencao, e to fazendo isso pq realmente te amo
-    </p>
+<!-- POPUP (COMEÇA ESCONDIDO) -->
+<div id="overlay">
+  <div class="card">
+    <p>desde que a gente comecou a namorar, eu senti que nunca tinha feito um pedido digno</p>
+    <p>sentia que era algo que foi feito de forma desleixada</p>
+    <p>queria mudar isso, essa era a surpresa que eu queria te fazer no minecraft</p>
+    <p>mas voce nao queria jogar</p>
+    <p>mas eu amo voce, mesmo q eu tenha um jeito meio complicado, eu realmente te amo</p>
+    <p>e espero que voce me ame tambem</p>
+    <p>eu nao fiz isso completamente sozinho, usei a internet pra pegar muitas coisas, quase tudo</p>
+    <p>mas acho q oq importa eh a intencao, e to fazendo isso pq realmente te amo</p>
+    <button id="close">Fechar</button>
   </div>
 </div>
 
