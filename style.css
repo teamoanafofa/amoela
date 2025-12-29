@@ -1,87 +1,63 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: pink;
-  overflow: hidden;
+const music = document.getElementById("music");
+
+function playMusic() {
+  music.play();
+  localStorage.setItem("musicPlaying", "true");
 }
 
-.container {
-  text-align: center;
-  margin-top: 15vh;
+if (localStorage.getItem("musicPlaying") === "true") {
+  music.play().catch(() => {});
 }
 
-.heart {
-  font-size: 80px;
-  animation: pulse 1s infinite;
+// 💌 Nova aba com carta
+function openLetter() {
+  localStorage.setItem("musicPlaying", "true");
+
+  const letterWindow = window.open("", "_blank");
+
+  letterWindow.document.write(`
+    <html>
+    <head>
+      <title>💌 Para Você</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <audio src="boca.mp3" autoplay loop></audio>
+
+      <div class="letter">
+        <h1>💖 Uma carta pra você</h1>
+        <p>
+          Desde que te conheci, meus dias ficaram mais leves,
+          meus sorrisos mais sinceros e meu coração mais seu.
+        </p>
+        <p>
+          Hoje, oficialmente, começa nossa história 💕
+        </p>
+        <h2>💞 19/11/2025 💞</h2>
+      </div>
+
+      <div class="hearts"></div>
+      <script>
+        setInterval(() => {
+          const heart = document.createElement("span");
+          heart.innerHTML = "❤️";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.fontSize = Math.random() * 20 + 20 + "px";
+          document.querySelector(".hearts").appendChild(heart);
+          setTimeout(() => heart.remove(), 5000);
+        }, 300);
+      </script>
+    </body>
+    </html>
+  `);
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-
-h1 {
-  color: #c4004d;
-}
-
-.buttons button {
-  padding: 15px 30px;
-  margin: 10px;
-  font-size: 18px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.yes {
-  background: #ff4d88;
-  color: white;
-}
-
-.no {
-  background: gray;
-  color: white;
-  position: absolute;
-  left: -999px;
-}
-
-.music-btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  background: #ff4d88;
-  color: white;
-  cursor: pointer;
-}
-
-.hearts span {
-  position: fixed;
-  color: red;
-  animation: fall 5s linear infinite;
-}
-
-@keyframes fall {
-  from {
-    top: -10%;
-    opacity: 1;
-  }
-  to {
-    top: 110%;
-    opacity: 0;
-  }
-}
-
-/* CARTA */
-.letter {
-  background: #fff0f5;
-  width: 70%;
-  margin: 10vh auto;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  text-align: center;
-}
+// ❤️ Corações caindo
+setInterval(() => {
+  const heart = document.createElement("span");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 20 + "px";
+  document.querySelector(".hearts").appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 300);
