@@ -1,7 +1,7 @@
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#ffd6e7;
+    font-family: "Georgia", serif;
+    background: linear-gradient(180deg,#ffd6e7,#ffc0d9);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -10,12 +10,14 @@ body{
 
 .container{
     text-align:center;
+    max-width:360px;
+    width:100%;
 }
 
 .disco-wrapper{
     display:flex;
     justify-content:center;
-    margin-bottom:15px;
+    margin-bottom:20px;
 }
 
 #playBtn{
@@ -25,18 +27,19 @@ body{
 }
 
 .disco{
-    width:70px;
-    height:70px;
+    width:72px;
+    height:72px;
     border-radius:50%;
     background:
         radial-gradient(circle at center,
-        #eee 0%,
-        #eee 12%,
-        #aaa 13%,
+        #f2f2f2 0%,
+        #f2f2f2 10%,
+        #aaa 11%,
         #aaa 28%,
         #ff2b7a 29%,
         #ff2b7a 100%);
-    animation:spin 2s linear infinite;
+    animation:spin 2.5s linear infinite;
+    transform-origin:center center;
 }
 
 @keyframes spin{
@@ -45,35 +48,47 @@ body{
 }
 
 .carta{
-    background:#fff;
-    padding:25px;
-    width:320px;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,.2);
-    margin:0 auto 15px;
+    background:#fffafc;
+    padding:26px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    margin-bottom:18px;
+    line-height:1.45;
 }
 
 #cronometro{
-    margin-bottom:15px;
     font-weight:bold;
+    margin-bottom:18px;
+    color:#a6004f;
 }
 
 .botoes{
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:18px;
 }
 
 .botoes button{
-    padding:10px 20px;
+    padding:12px 26px;
     font-size:16px;
     border:none;
-    border-radius:8px;
+    border-radius:999px;
     cursor:pointer;
+    transition:.2s;
 }
 
-#sim{background:#ff5fa2;color:#fff;}
-#nao{background:#ccc;}
+#sim{
+    background:#ff4f9a;
+    color:white;
+}
+
+#sim:hover{
+    transform:scale(1.05);
+}
+
+#nao{
+    background:#e0e0e0;
+}
 
 .popup{
     position:fixed;
@@ -81,24 +96,26 @@ body{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,.6);
+    background:rgba(0,0,0,.55);
     display:none;
     justify-content:center;
     align-items:center;
 }
 
 .popup-carta{
-    background:#fff;
-    padding:25px;
+    background:#fffafc;
+    padding:26px;
     width:320px;
-    border-radius:10px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
     position:relative;
+    line-height:1.45;
 }
 
 #fechar{
     position:absolute;
-    top:10px;
-    right:15px;
+    top:12px;
+    right:16px;
     font-size:22px;
     cursor:pointer;
 }
